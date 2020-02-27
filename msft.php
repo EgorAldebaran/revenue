@@ -12,7 +12,7 @@ $db = 'finance';
 $localhost = 'localhost';
 
 
-     function process($sys) {
+     function processSearchRevenue($sys) {
          for($i = 0; $i < 12; $i++) {
              $result[$i] = ($sys[$i+1] / $sys[$i]) - 1;
          }
@@ -113,18 +113,11 @@ for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
                  $row11['close'] + $row12['close'] + $row13['close'] + $row14['close'] + $row15['close'] +
                  $row16['close'] + $row17['close'] + $row18['close'] + $row19['close'] + $row20['close'] +
                  $row21['close'] + $row22['close'] + $row23['close'] + $row24['close']) / 25;
-    echo "averenge ".$averenge;
 
     $elementes = array($row['close'] , $row2['close'] , $row4['close'] ,
                        $row6['close'] , $row8['close'] ,  $row10['close'] ,
                        $row12['close'] , $row14['close'] , $row16['close'] , $row18['close'] ,  $row20['close'] ,
                        $row22['close'] ,  $row24['close']);
-    echo '<br>';
-    echo 'revenue for month this '.$company." company = ";
-    process($elementes);
-    echo '<br>';
-    echo 0.046859 * 12;
-
 }
 
   ?>
