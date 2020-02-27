@@ -6,21 +6,21 @@
   <body>
 <?php
 
-     $user = 'new';
+     function msftProcess() {
+
+$companY = 'msft';
+$localhost = 'localhost';
+$user = 'new';
 $password = '12345';
 $db = 'finance';
-$localhost = 'localhost';
-$company = 'msft';
-
 
      function processSearchRateOfReturn($sys) {
          for($i = 0; $i < 24; $i++) {
              $result[$i] = ($sys[$i+1] / $sys[$i]) - 1;
          }
-         echo "this company name ".$GLOBALS["company"]. " averange RateOfReturn ";
+         echo "this company name ".$GLOBALS["companY"]. " averange RateOfReturn ";
          echo array_sum($result)*100;
      }
-
 
 
 $mysqli = new mysqli($localhost, $user, $password, $db);
@@ -29,32 +29,32 @@ if ($mysqli->connect_errno) {
                                               $mysqli->connect_error;
 }
 
-$res = $mysqli->query("select close from $company where date = '2019-02-19'");
-$res0 = $mysqli ->query("select close from $company where date = '2019-02-28'");
-$res1 = $mysqli ->query("select close from $company where date = '2019-03-01'");
-$res2 = $mysqli ->query("select close from $company where date = '2019-03-29'");
-$res3 = $mysqli ->query("select close from $company where date = '2019-04-01'");
-$res4 = $mysqli ->query("select close from $company where date = '2019-04-30'");
-$res5 = $mysqli ->query("select close from $company where date = '2019-05-01'");
-$res6 = $mysqli ->query("select close from $company where date = '2019-05-31'");
-$res7 = $mysqli ->query("select close from $company where date = '2019-06-03'");
-$res8 = $mysqli ->query("select close from $company where date = '2019-06-28'");
-$res9 = $mysqli ->query("select close from $company where date = '2019-07-01'");
-$res10 = $mysqli ->query("select close from $company where date = '2019-07-31'");
-$res11 = $mysqli ->query("select close from $company where date = '2019-08-01'");
-$res12 = $mysqli ->query("select close from $company where date = '2019-08-30'");
-$res13 = $mysqli ->query("select close from $company where date = '2019-09-03'");
-$res14 = $mysqli ->query("select close from $company where date = '2019-09-30'");
-$res15 = $mysqli ->query("select close from $company where date = '2019-10-01'");
-$res16 = $mysqli ->query("select close from $company where date = '2019-10-31'");
-$res17 = $mysqli ->query("select close from $company where date = '2019-11-01'");
-$res18 = $mysqli ->query("select close from $company where date = '2019-11-29'");
-$res19 = $mysqli ->query("select close from $company where date = '2019-12-02'");
-$res20 = $mysqli ->query("select close from $company where date = '2019-12-31'");
-$res21 = $mysqli ->query("select close from $company where date = '2020-01-02'");
-$res22 = $mysqli ->query("select close from $company where date = '2020-01-31'");
-$res23 = $mysqli ->query("select close from $company where date = '2020-02-03'");
-$res24 = $mysqli ->query("select close from $company where date = '2020-02-14'");
+$res = $mysqli->query("select close from $companY where date = '2019-02-19'");
+$res0 = $mysqli ->query("select close from $companY where date = '2019-02-28'");
+$res1 = $mysqli ->query("select close from $companY where date = '2019-03-01'");
+$res2 = $mysqli ->query("select close from $companY where date = '2019-03-29'");
+$res3 = $mysqli ->query("select close from $companY where date = '2019-04-01'");
+$res4 = $mysqli ->query("select close from $companY where date = '2019-04-30'");
+$res5 = $mysqli ->query("select close from $companY where date = '2019-05-01'");
+$res6 = $mysqli ->query("select close from $companY where date = '2019-05-31'");
+$res7 = $mysqli ->query("select close from $companY where date = '2019-06-03'");
+$res8 = $mysqli ->query("select close from $companY where date = '2019-06-28'");
+$res9 = $mysqli ->query("select close from $companY where date = '2019-07-01'");
+$res10 = $mysqli ->query("select close from $companY where date = '2019-07-31'");
+$res11 = $mysqli ->query("select close from $companY where date = '2019-08-01'");
+$res12 = $mysqli ->query("select close from $companY where date = '2019-08-30'");
+$res13 = $mysqli ->query("select close from $companY where date = '2019-09-03'");
+$res14 = $mysqli ->query("select close from $companY where date = '2019-09-30'");
+$res15 = $mysqli ->query("select close from $companY where date = '2019-10-01'");
+$res16 = $mysqli ->query("select close from $companY where date = '2019-10-31'");
+$res17 = $mysqli ->query("select close from $companY where date = '2019-11-01'");
+$res18 = $mysqli ->query("select close from $companY where date = '2019-11-29'");
+$res19 = $mysqli ->query("select close from $companY where date = '2019-12-02'");
+$res20 = $mysqli ->query("select close from $companY where date = '2019-12-31'");
+$res21 = $mysqli ->query("select close from $companY where date = '2020-01-02'");
+$res22 = $mysqli ->query("select close from $companY where date = '2020-01-31'");
+$res23 = $mysqli ->query("select close from $companY where date = '2020-02-03'");
+$res24 = $mysqli ->query("select close from $companY where date = '2020-02-14'");
 
 for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
     $res->data_seek($row_no);
@@ -110,17 +110,7 @@ for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
 //echo $row23['close'].'<br>';
     $row24 = $res24->fetch_assoc();
 //echo $row24['close'].'<br>';
-    $averenge = ($row['close'] + $row1['close'] + $row2['close'] + $row3['close'] + $row4['close'] + $row5['close']
-                 + $row6['close'] + $row7['close'] + $row8['close'] + $row9['close'] + $row10['close'] +
-                 $row11['close'] + $row12['close'] + $row13['close'] + $row14['close'] + $row15['close'] +
-                 $row16['close'] + $row17['close'] + $row18['close'] + $row19['close'] + $row20['close'] +
-                 $row21['close'] + $row22['close'] + $row23['close'] + $row24['close']) / 25;
 
-    $elementes = array($row['close'] + $row1['close'] + $row2['close'] + $row3['close'] + $row4['close'] + $row5['close']
-                 + $row6['close'] + $row7['close'] + $row8['close'] + $row9['close'] + $row10['close'] +
-                 $row11['close'] + $row12['close'] + $row13['close'] + $row14['close'] + $row15['close'] +
-                 $row16['close'] + $row17['close'] + $row18['close'] + $row19['close'] + $row20['close'] +
-                 $row21['close'] + $row22['close'] + $row23['close'] + $row24['close']);
 
     $example = array($row['close'] , $row1['close'] , $row2['close'] , $row3['close'] , $row4['close'] , $row5['close']
                      , $row6['close'] , $row7['close'] , $row8['close'] , $row9['close'] , $row10['close'] ,
@@ -129,13 +119,8 @@ for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
                      $row21['close'] , $row22['close'] , $row23['close'] , $row24['close']);
     processSearchRateOfReturn($example);
 
-
-
-
-
-
 }
-
+     }
   ?>
   </body>
 </html>
