@@ -11,12 +11,12 @@
      function process() {
          switch($_POST['company']) {
          case 'msft':
-             echo 'msft';
+             processSearchRevenue($elementes);
+             break;
          default:
              echo 'error';
          }
      }
-
 
   ?>
   </body>
