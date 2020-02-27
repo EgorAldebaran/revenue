@@ -6,6 +6,17 @@
   <body>
 <?php
 
+     function process($sys) {
+         for($i = 0; $i < 24; $i++) {
+             $result[$i] = ($sys[$i+1] / $sys[$i]) - 1;
+         }
+         echo array_sum($result)/3;
+     }
+
+
+
+echo '<br>';
+
      $company = 'msft';
 
 $mysqli = new mysqli("localhost", "new", "12345", "finance");
@@ -104,6 +115,13 @@ $averenge = ($row['close'] + $row1['close'] + $row2['close'] + $row3['close'] + 
       $row21['close'] + $row22['close'] + $row23['close'] + $row24['close']) / 25;
 echo "averenge ".$averenge;
 
+$elementes = array($row['close'] , $row1['close'] , $row2['close'] , $row3['close'] , $row4['close'] , $row5['close']
+                   ,$row6['close'] , $row7['close'] , $row8['close'] , $row9['close'] , $row10['close'] ,
+                   $row11['close'] , $row12['close'] , $row13['close'] , $row14['close'] , $row15['close'] ,
+                   $row16['close'] , $row17['close'] , $row18['close'] , $row19['close'] , $row20['close'] ,
+                   $row21['close'] , $row22['close'] , $row23['close'] , $row24['close']);
+echo '<br>';
+process($elementes);
 
 }
 
