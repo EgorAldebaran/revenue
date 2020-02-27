@@ -10,7 +10,7 @@
          for($i = 0; $i < 24; $i++) {
              $result[$i] = ($sys[$i+1] / $sys[$i]) - 1;
          }
-         echo array_sum($result)/3;
+         echo array_sum($result)/24;
      }
 
 
@@ -121,6 +121,7 @@ $elementes = array($row['close'] , $row1['close'] , $row2['close'] , $row3['clos
                    $row16['close'] , $row17['close'] , $row18['close'] , $row19['close'] , $row20['close'] ,
                    $row21['close'] , $row22['close'] , $row23['close'] , $row24['close']);
 echo '<br>';
+echo 'revenue for month this '.$company." company = ";
 process($elementes);
 
 }
