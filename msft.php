@@ -1,10 +1,18 @@
 <html>
-  <head>
+n  <head>
     <title>example</title>
     <meta charset = 'utf-8'>
   </head>
   <body>
 <?php
+
+     function processSearchRateOfReturn($sys) {
+         for($i = 0; $i < count($example); $i++) {
+             $result[$i] = ($sys[$i+1] / $sys[$i]) - 1;
+         }
+         echo "this company name ".$GLOBALS["companY"]. " averange RateOfReturn ";
+         echo array_sum($result)*100;
+     }
 
      function msftProcess() {
 
@@ -13,15 +21,6 @@ $localhost = 'localhost';
 $user = 'new';
 $password = '12345';
 $db = 'finance';
-
-     function processSearchRateOfReturn($sys) {
-         for($i = 0; $i < 24; $i++) {
-             $result[$i] = ($sys[$i+1] / $sys[$i]) - 1;
-         }
-         echo "this company name ".$GLOBALS["companY"]. " averange RateOfReturn ";
-         echo array_sum($result)*100;
-     }
-
 
 $mysqli = new mysqli($localhost, $user, $password, $db);
 if ($mysqli->connect_errno) {
@@ -121,6 +120,9 @@ for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
 
 }
      }
+
+
+
   ?>
   </body>
 </html>
